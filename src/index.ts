@@ -3,7 +3,7 @@ import {createInterface} from "readline";
 import {from, partition} from "rxjs";
 import {count, map, mergeMap, tap} from "rxjs/operators";
 import {join} from "path";
-import {mapInterfaceToLine, mapLineToSchema} from "./utility";
+import {isLineValid, mapInterfaceToLine, mapLineToSchema} from "./utility";
 import {structures} from "./structures";
 import {appConfig} from "./config";
 
@@ -20,9 +20,8 @@ from(structures).pipe(
         lines: mapInterfaceToLine(readLineInterface),
         ...rest
     })),
-    map(({lines, totalLength, schema, fileName}) => ({
-        // Todo: update the validator to care for more cases
-        partitioned: partition(lines, line => line.length === totalLength),
+    map(({lines, schema, fileName}) => ({
+        partitioned: partition(lines, line => isLineValid(line, schema)),
         schema,
         fileName
     })),
@@ -33,4 +32,5 @@ from(structures).pipe(
     }),
     mergeMap(({partitioned: [validLines], schema}) => validLines.pipe(map(mapLineToSchema(schema)))),
     tap(console.log)
-).subscribe();
+).subscribe((d) => {
+});

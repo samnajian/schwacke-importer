@@ -1,11 +1,10 @@
-import {IFieldDefinition} from "./iFieldDefinition";
-import {Dictionary} from "../../types";
+import {ISchema} from "./iSchema";
 
 type IFileStructure = Array<{
     version: number | string;
     totalLength: number;
     fileName: string;
-    schema: Dictionary<IFieldDefinition>
+    schema: ISchema
 }>
 
 export {
