@@ -1,0 +1,25 @@
+{
+  "name": "schwacke-importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scr/index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samnajian/schwacke-importer.git"
+  },
+  "keywords": [
+    "Auto",
+    "Bild",
+    "Computer",
+    "Bild"
+  ],
+  "author": "Sam Najian dev@najian.info",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samnajian/schwacke-importer/issues"
+  },
+  "homepage": "https://github.com/samnajian/schwacke-importer#readme"
+}
