@@ -32,5 +32,4 @@ from(structures).pipe(
     }),
     mergeMap(({partitioned: [validLines], schema}) => validLines.pipe(map(mapLineToSchema(schema)))),
     tap(console.log)
-).subscribe((d) => {
-});
+).subscribe();
