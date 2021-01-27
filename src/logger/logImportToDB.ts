@@ -11,4 +11,5 @@ const logImportToDB = ({startDate, endDate, ...rest}: IInsertLog) => {
     return getDB().query(query).subscribe();
 };
 
+// Todo: add test for saving to db
 export {logImportToDB};

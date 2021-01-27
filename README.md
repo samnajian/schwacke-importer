@@ -1,11 +1,47 @@
 # Schwacke-importer
 
+
+
+## Getting Started
+
+To get started, first install all the necessary dependencies.
+```
+> ./scripts/init
+```
+
+Run in development mode
+```
+> npm run dev
+```
+
+Run tests
+```
+> npm run test
+```
+
+Watch for test changes
+```
+> npm run test:watch
+```
+
+## Farewell
+
+Run tear-down script
+
+#### Notes
+
+* Re-inventing the wheel for most of the cases has been favored!
+
+```
+> ./scripts/tearDown
+```
+
 ## Keywords
-Node, Typescript, RxJS, PostgreSQL, Docker, ESLint 
 
-
-## Development:
-
-Run `./scripts/init` to install node dependencies and init database
-Run `npm run dev` to start development
-Consult package.json -> scripts for available scripts
+- Node
+- Typescript
+- RxJS
+- PostgreSQL
+- Jest
+- Docker
+- ESLint
