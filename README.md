@@ -28,6 +28,9 @@ Watch for test changes
 
 Run tear-down script
 
+```
+> ./scripts/tearDown
+```
 #### Notes
 
 * Re-inventing the wheel for most of the cases has been favored!
