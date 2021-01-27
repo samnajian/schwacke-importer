@@ -35,9 +35,6 @@ Run tear-down script
 
 * Re-inventing the wheel for most of the cases has been favored!
 
-```
-> ./scripts/tearDown
-```
 
 ## Keywords
 
