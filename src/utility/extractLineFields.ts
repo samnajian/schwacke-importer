@@ -4,7 +4,7 @@ import {IFieldDefinition} from "../structures/types";
 /**
  * Maps each line of data to schema fields based on the length
  */
-const mapLineToSchema = (schema: Dictionary<IFieldDefinition>) => (line: string): Dictionary<string> => {
+const extractLineFields = (schema: Dictionary<IFieldDefinition>) => (line: string): Dictionary<string> => {
     const fields = Object.keys(schema),
         lengths = Object.values<IFieldDefinition>(schema);
 
@@ -20,5 +20,5 @@ const mapLineToSchema = (schema: Dictionary<IFieldDefinition>) => (line: string)
 };
 
 export {
-    mapLineToSchema
+    extractLineFields
 };

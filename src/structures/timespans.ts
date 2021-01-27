@@ -5,23 +5,26 @@ const timespansStructure: IFileStructure = [{
     schema: {
         id: {
             length: 8,
-            type: "number"
+            type: "integer"
         },
         schwacke_code: {
             length: 8,
-            type: "number"
+            type: "integer"
         },
         valid_from: {
             length: 10,
-            type: "date",
+            type: "timestamp",
         },
         valid_to: {
             length: 10,
-            type: "date"
+            type: "timestamp"
         },
     },
     totalLength: 36,
-    fileName: "timespans.dat"
+    fileName: "timespans.dat",
+    tableName: "timespans_v1",
+    //Todo: implement insertQuery
+    getInsertQuery: (fields) => ""
 }];
 export {
     timespansStructure

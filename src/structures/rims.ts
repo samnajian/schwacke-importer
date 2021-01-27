@@ -1,35 +1,44 @@
-import {IFileStructure} from "./types";
+import {IFileStructure, IRimFields} from "./types";
+import {camelCaseToSnakeCase} from "../utility";
+import {createMultiInsertQuery} from "../db/tables/utility";
 
+
+const tableName = "rims_v1";
 const rimsStructure: IFileStructure = [{
     version: 1,
     schema: {
         code: {
             length: 5,
-            type: "number"
+            type: "integer"
         },
         width: {
             length: 5,
-            type: "number"
+            type: "integer"
         },
         height: {
             length: 1,
-            type: "string"
+            type: "varchar"
         },
         one_piece: {
             length: 1,
-            type: "string"
+            type: "varchar"
         },
         diameter: {
             length: 2,
-            type: "number"
+            type: "integer"
         },
         material: {
             length: 1,
-            type: "string"
+            type: "varchar"
         }
     },
     totalLength: 15,
-    fileName: "rims.dat"
+    fileName: "rims.dat",
+    tableName,
+    getInsertQuery: (fields: IRimFields) => `INSERT INTO ${tableName}
+            (${Object.keys(fields).map(camelCaseToSnakeCase).join(",")}) 
+            VALUES (${createMultiInsertQuery(fields)}) 
+    `
 }];
 
 export {

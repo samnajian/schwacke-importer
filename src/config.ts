@@ -9,7 +9,8 @@ const appConfig = {
             database: "main",
             host: "0.0.0.0"
         }
-    }
+    },
+    batchSize: 10 // size of batch of records to be inserted to db
 };
 
 export {appConfig};

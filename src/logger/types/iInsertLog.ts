@@ -1,6 +1,6 @@
 type IInsertLog = {
-    start: Date;
-    end: Date;
+    startDate: number;
+    endDate: number;
     insertCount: number;
     updateCount: number;
     invalidCount: number;
